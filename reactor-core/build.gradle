@@ -83,6 +83,12 @@ dependencies {
   noMicrometerTestCompile configurations.testCompile
 }
 
+task groupId {
+  doLast {
+	println project.group
+  }
+}
+
 task downloadBaseline {
   if (project.gradle.startParameter.isOffline()) {
 	println "Offline: skipping downloading of baseline and JAPICMP"
