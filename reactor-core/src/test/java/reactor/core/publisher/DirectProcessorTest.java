@@ -49,6 +49,7 @@ public class DirectProcessorTest {
 
     @Test
     public void normal() {
+    	System.out.println("******here*****");
         DirectProcessor<Integer> tp = DirectProcessor.create();
 
 	    StepVerifier.create(tp)

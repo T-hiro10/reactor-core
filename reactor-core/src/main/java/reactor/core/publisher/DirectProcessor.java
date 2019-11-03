@@ -268,6 +268,12 @@ public final class DirectProcessor<T> extends FluxProcessor<T, T> {
 
 	@Override
 	public boolean hasDownstreams() {
+		System.out.println("********************************************");
+		final StackTraceElement[] stackTrace = new RuntimeException().getStackTrace();
+		for (final StackTraceElement stackTraceElement : stackTrace) {
+		   System.out.println(stackTraceElement.toString());
+		}
+		System.out.println("********************************************");
 		DirectInner<T>[] s = subscribers;
 		return s != EMPTY && s != TERMINATED;
 	}
